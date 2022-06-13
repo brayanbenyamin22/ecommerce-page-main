@@ -1,0 +1,37 @@
+.head-container {
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    height: 70px;
+    background-color: var(--White);
+}
+.head-container__left {
+    display: flex;
+    width: 70%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 100%;
+}
+.head-container__right {
+    display: flex;
+    width: 30%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 100%;
+}
+/* ==== Seccion Izquierda ==== */
+.icon-menu {
+    align-self: center;
+}
+.icon-menu img {
+    width: 18px;
+    height: 18px;
+    margin-left: 25px;
+}
+.logo {
+    align-self: center;
+    margin-left: 15px;
+}
+.logo img {
+    width: 95%;
+}
