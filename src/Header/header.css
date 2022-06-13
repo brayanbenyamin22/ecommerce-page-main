@@ -8,16 +8,18 @@
 .head-container__left {
     display: flex;
     width: 70%;
-    min-width: 288px;
     max-width: 900px;
     height: 100%;
+    justify-content: flex-start;
+    /* background-color: blueviolet; */
 }
 .head-container__right {
     display: flex;
     width: 30%;
-    min-width: 288px;
     max-width: 900px;
     height: 100%;
+    justify-content: flex-end;
+    /* background-color: antiquewhite; */
 }
 /* ==== Seccion Izquierda ==== */
 .icon-menu {
@@ -26,7 +28,7 @@
 .icon-menu img {
     width: 18px;
     height: 18px;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 .logo {
     align-self: center;
@@ -34,4 +36,19 @@
 }
 .logo img {
     width: 95%;
+}
+/* ==== Seccion Derecha ==== */
+.icon-cart {
+    align-self: center;
+}
+.icon-avatar {
+    align-self: center;
+}
+.icon-cart img {
+    margin-right: 15px;
+}
+.icon-avatar img {
+    width: 28px;
+    height: 28px;
+    margin-right: 20px;
 }
