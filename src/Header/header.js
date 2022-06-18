@@ -6,7 +6,7 @@ function Header () {
         <header className="head-container">
             {/* === Container Left */}
             <div className="head-container__left">
-                <span className="icon-menu">
+                <span className="icon-menu"> {/* === Aqui ira el componente sidebar y navbar*/}
                     <img src={require("../images/icon-menu.svg").default} alt="Menu del icono"/>
                 </span>
                 <div className="logo">
