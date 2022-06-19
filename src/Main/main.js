@@ -6,31 +6,8 @@ import imagen3 from '../images/image-product-3.jpg';
 import imagen4 from '../images/image-product-4.jpg'; 
 
 function Main () {
-    /* === Manera Compleja */
-    /* const imagenes = [
-        {
-            image: imagen1,
-            id: 1,
-        },
-        {
-            image: imagen2,
-            id: 2,
-        },
-        {
-            image: imagen3,
-            id: 3,
-        },
-        {
-            image: imagen4,
-            id: 4,
-        },
-    ]; 
-    const imagenActual = imagenes.find( () => {
-        if(imagenes.id === slideImage){
-            return imagenes.image;
-        }
-    });  */
     /* ====FORMA SENCILLA ==== Si funciono xD*/
+    /* Array de imagenes para el slide */
     const images = [
         imagen1,
         imagen2,
@@ -56,9 +33,12 @@ function Main () {
             setSlideImage(slideImage - 1);
         }
     }
+
+    const price = 120;
     console.log(slideImage);
     return (
         <main className="main-container">
+            {/* ===== Slide ===== */}
             <div className="slider">
                 <div className="swiper swiper-main">
                     <div className="swiper-wrapper">
@@ -84,6 +64,28 @@ function Main () {
                             <img src={images[slideImage]} alt="imagenes"/>
                         </div>
                     </div>
+                </div>
+            </div>
+            {/* ===== Information ===== */}
+            <div className="info-container">
+                {/* ===== Description ===== */}
+                <div className="description-container">
+                    <p className="sub-title">
+                        SNEAKER COMPANY
+                    </p>
+                    <p className="title">
+                        Fall Limited Edition
+                        Sneakers
+                    </p>
+                    <p className="description">
+                        These low-profile sneakers are your perfect
+                        casual wear companion. Featuring a durable
+                        rubber outer sole, they'll withstand everything
+                        the weather can offer.
+                    </p>
+                </div>
+                {/* ==== Price and Add Cart ==== */}
+                <div className="price-container">
                 </div>
             </div>
         </main>

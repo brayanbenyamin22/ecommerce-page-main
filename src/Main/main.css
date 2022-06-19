@@ -4,7 +4,7 @@
     height: auto;
     background-color: cadetblue;
 }
-
+/* ====== SLide ====== */
 .swiper-wrapper {
     position: relative;
     width: 100%;
@@ -13,6 +13,7 @@
 .swiper-slide img{
     width: 100%;
     height: auto;
+    transition: 5000 ease;
 }
 .swiper-buttons__container {
     position: absolute;
@@ -54,4 +55,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* ====== Information ====== */
+.info-container {
+    width: 100%;
+    height: auto;
+    background-color: blueviolet;
 }
