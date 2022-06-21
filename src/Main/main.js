@@ -18,7 +18,7 @@ function Main () {
     const [slideImage, setSlideImage] = React.useState(0);
 
     const nextImage = () => {
-        if(slideImage === 3){
+        if(slideImage === (images.length - 1)){
             setSlideImage(0);
         }
         else {
@@ -27,14 +27,14 @@ function Main () {
     }
     const prevImage = () => {
         if(slideImage === 0){
-            setSlideImage(3);
+            setSlideImage(images.length - 1);
         }
         else {
             setSlideImage(slideImage - 1);
         }
     }
 
-    const price = 120;
+    //const price = 120;
     console.log(slideImage);
     return (
         <main className="main-container">
@@ -101,6 +101,29 @@ function Main () {
                             </p>
                         </div>
                             
+                    </div>
+                    <div className="add-container">
+                        <div className="added-products">
+                            <span className="button-minus">
+                                <img src={require("../images/icon-minus.svg").default} alt=""/>
+                            </span>
+                            <p className="products-counter">
+                                0
+                            </p>
+                            <span className="button-plus">
+                                <img src={require("../images/icon-plus.svg").default} alt=""/>
+                            </span>
+                        </div>
+                        <div className="add-cart-container">
+                            <button type="button" className="add-cart--button">
+                                <div className="add-cart">
+                                    <span className="cart">
+                                        <img src={require("../images/icon-cart.svg").default} alt=""/>
+                                    </span>
+                                    <p>Add to cart</p>
+                                </div>
+                            </button> 
+                        </div>
                     </div>
                 </div>
             </div>
