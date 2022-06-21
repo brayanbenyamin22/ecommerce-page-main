@@ -33,9 +33,26 @@ function Main () {
             setSlideImage(slideImage - 1);
         }
     }
+    /* =============================================================================================== */
+    /* ===== Products Added ===== */
+    const [product, setProduct] = React.useState(0);
+    const addProduct = () => {
+        setProduct(product + 1);
+    }
+    const deleteProduct = () => {
+        if(product !== 0) {
+            setProduct(product - 1);
+        }
+    }
+    const productPrice = 125.00;
+    const totalAmount = productPrice * product;
+     /* =============================================================================================== */
+    /* ====== Logica del Modal ======= */
+    /*  const openCart = () => {
+        if(product > 0) {
 
-    //const price = 120;
-    console.log(slideImage);
+        }
+    } */
     return (
         <main className="main-container">
             {/* ===== Slide ===== */}
@@ -105,17 +122,29 @@ function Main () {
                     <div className="add-container">
                         <div className="added-products">
                             <span className="button-minus">
-                                <img src={require("../images/icon-minus.svg").default} alt=""/>
+                                <img 
+                                    src={require("../images/icon-minus.svg").default} 
+                                    alt="icon minus"
+                                    onClick={deleteProduct}
+                                />
                             </span>
                             <p className="products-counter">
-                                0
+                                {product}
                             </p>
                             <span className="button-plus">
-                                <img src={require("../images/icon-plus.svg").default} alt=""/>
+                                <img 
+                                    src={require("../images/icon-plus.svg").default} 
+                                    alt="icon plus"
+                                    onClick={addProduct}
+                                />
                             </span>
                         </div>
                         <div className="add-cart-container">
-                            <button type="button" className="add-cart--button">
+                            <button 
+                                type="button" 
+                                className="add-cart--button"
+                                /* onClick={} */
+                            >
                                 <div className="add-cart">
                                     <span className="cart">
                                         <img src={require("../images/icon-cart.svg").default} alt=""/>
