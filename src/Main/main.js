@@ -86,6 +86,22 @@ function Main () {
                 </div>
                 {/* ==== Price and Add Cart ==== */}
                 <div className="price-container">
+                    <div className="price-cards">
+                        <div className="price-card--1">
+                            <p className="price-now">
+                                $125.00
+                            </p>
+                            <div className="price-discount">
+                                <p>50%</p>
+                            </div>
+                        </div>
+                        <div className="price-card--2">
+                            <p className="price-before">
+                                $250.00
+                            </p>
+                        </div>
+                            
+                    </div>
                 </div>
             </div>
         </main>
