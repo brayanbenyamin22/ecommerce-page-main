@@ -1,0 +1,14 @@
+.cart-container {
+    position: absolute;
+    width: 95%;
+    height: 280px;
+    z-index: 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    background-color: var(--White);
+}
+.active {
+    z-index: 1;
+}
