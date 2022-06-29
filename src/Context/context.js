@@ -9,12 +9,16 @@ function AppProvider (props) {
     /* ===== Logica del Menu desplegable ====== */
     const [openCart, setOpenCart] = React.useState(false);
     
+    /* ==== Logica del boton añadir productos ==== */
+    const [productAdded, setProductAdded] = React.useState(false);
     return(
         <AppContext.Provider value={{
             product,
             setProduct,
             openCart,
             setOpenCart,
+            productAdded, 
+            setProductAdded,
         }}>
             {props.children}
         </AppContext.Provider>

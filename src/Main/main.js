@@ -12,19 +12,20 @@ function Main () {
         setProduct,
         openCart,
         setOpenCart,
+        productAdded,
+        setProductAdded,
     } = React.useContext(AppContext);
 
-    const addProduct = () => {
+    const moreProduct = () => {
         setProduct(product + 1);
     }
-    const deleteProduct = () => {
+    const minusProduct = () => {
         if(product !== 0) {
             setProduct(product - 1);
         }
     }
     const productPrice = 125.00;
     const totalAmount = productPrice * product;
-
     /* ==== Forma Larga === */
     /* if(product === 0){
         setOpenCart(false);
@@ -35,6 +36,14 @@ function Main () {
     
     product === 0 ? setOpenCart(false) : setOpenCart(true);
 
+    /* Productos Added */
+    const cartProducts = () => {
+        setProductAdded(true);
+    }
+    const deleteProducts = () => {
+        setProductAdded(false);
+        setProduct(0);
+    }
     return (
         <main className="main-container">
             <Cart 
@@ -42,6 +51,8 @@ function Main () {
               product={product}
               productPrice={productPrice}
               totalAmount={totalAmount}
+              productAdded={productAdded}
+              deleteProducts={deleteProducts}
             />
             <Slide />
             {/* ====== ADD ====== */}
@@ -86,7 +97,7 @@ function Main () {
                                 <img 
                                     src={require("../images/icon-minus.svg").default} 
                                     alt="icon minus"
-                                    onClick={deleteProduct}
+                                    onClick={minusProduct}
                                 />
                             </span>
                             <p className="products-counter">
@@ -96,7 +107,7 @@ function Main () {
                                 <img 
                                     src={require("../images/icon-plus.svg").default} 
                                     alt="icon plus"
-                                    onClick={addProduct}
+                                    onClick={moreProduct}
                                 />
                             </span>
                         </div>
@@ -104,6 +115,7 @@ function Main () {
                             <button 
                                 type="button" 
                                 className="add-cart--button"
+                                onClick={cartProducts}
                                 /* onClick={} */
                             >
                                 <div className="add-cart">

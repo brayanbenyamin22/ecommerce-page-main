@@ -38,16 +38,20 @@ function Slide () {
                     <div className="swiper-wrapper">
                         <div className="swiper-buttons__container">
                             <div className="swiper-buttons">
-                                <div className="swiper-button-prev">
+                                <div 
+                                    onClick={prevImage} 
+                                    className="swiper-button-prev"
+                                >
                                     <img
-                                        onClick={prevImage} 
                                         src={require("../images/icon-previous.svg").default} 
                                         alt="next"
                                     />
                                 </div>
-                                <div className="swiper-button-next">
+                                <div 
+                                    onClick={nextImage}
+                                    className="swiper-button-next"
+                                >
                                     <img 
-                                        onClick={nextImage}
                                         src={require("../images/icon-next.svg").default} 
                                         alt="next"
                                     />

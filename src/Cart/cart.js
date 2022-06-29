@@ -1,8 +1,15 @@
 import React from "react";
-//import { AppContext } from "../Context/context";
+import { AppContext } from "../Context/context";
 import './cart.css';
 import image from '../images/image-product-1-thumbnail.jpg';
 function Cart (props) {
+    const {
+        productAdded,
+        setProductAdded,
+    } = React.useContext(AppContext);
+
+    
+    /* console.log(props.product); */
     return (
         <div className={`cart-container ${props.openCart && 'active'}`}>
             <div className="cart-header">
@@ -11,10 +18,10 @@ function Cart (props) {
                 </p>
             </div>
             <div className="cart-content">
-                <p className="cart-empty disable">
+                <p className={`cart-empty ${props.productAdded && 'disable'}`}>
                     Your cart is empty
-                </p>
-                <div className="cart-product">
+                </p> 
+                <div className={`cart-product ${props.productAdded && 'enable'}`}>
                     <div className="product-info">
                         <span className="product-img">
                             <img src={image} alt="producto"/>
@@ -30,11 +37,16 @@ function Cart (props) {
                                 </p>
                             </span>
                         </div>
-                        <span className="deleteBtn">
+                        <span 
+                            onClick={props.deleteProducts}
+                            className="deleteBtn">
                             <img src={require("../images/icon-delete.svg").default} alt="icon delete"/>
                         </span>
                     </div>
-                    <button className="checkoutBtn">
+                    <button 
+                        type="button"
+                        className="checkoutBtn"
+                    >
                         <p>Checkout</p>
                     </button>
                 </div>
