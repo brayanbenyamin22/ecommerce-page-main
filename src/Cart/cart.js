@@ -1,15 +1,8 @@
 import React from "react";
-import { AppContext } from "../Context/context";
 import './cart.css';
 import image from '../images/image-product-1-thumbnail.jpg';
-function Cart (props) {
-    const {
-        productAdded,
-        setProductAdded,
-    } = React.useContext(AppContext);
 
-    
-    /* console.log(props.product); */
+function Cart (props) {
     return (
         <div className={`cart-container ${props.openCart && 'active'}`}>
             <div className="cart-header">
