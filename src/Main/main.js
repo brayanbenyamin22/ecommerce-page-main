@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Cart } from "../Cart/cart";
 import { Slide } from "../slide/slide";
 /* import { Add } from "../Add/add"; */
@@ -22,8 +22,8 @@ function Main () {
             setProduct(product - 1);
         }
     }
-    /* const productPrice = 125.00;
-    const totalAmount = productPrice * product; */
+    const productPrice = 125.00;
+    const totalAmount = productPrice * product;
 
     /* ==== Forma Larga === */
     /* if(product === 0){
@@ -39,6 +39,9 @@ function Main () {
         <main className="main-container">
             <Cart 
               openCart={openCart}
+              product={product}
+              productPrice={productPrice}
+              totalAmount={totalAmount}
             />
             <Slide />
             {/* ====== ADD ====== */}
