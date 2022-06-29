@@ -1,12 +1,13 @@
 /* import logo from './logo.svg'; */
-import './App.css';
+/* import './App.css'; */
+import { AppProvider } from './Context/context';
 import { AppUI } from './AppUI/AppUI';
 
 function App() {
   return (
-    <div className="App">
+    <AppProvider>
       <AppUI />
-    </div>
+    </AppProvider>
   );
 }
 

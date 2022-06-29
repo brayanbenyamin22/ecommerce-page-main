@@ -1,72 +1,61 @@
-import React, { useState } from "react";
+import React from "react";
+import { Cart } from "../Cart/cart";
+import { Slide } from "../slide/slide";
+/* import { Add } from "../Add/add"; */
 import './main.css'
-import imagen1 from '../images/image-product-1.jpg';
-import imagen2 from '../images/image-product-2.jpg';
-import imagen3 from '../images/image-product-3.jpg';
-import imagen4 from '../images/image-product-4.jpg'; 
+import { AppContext } from "../Context/context";
+
 
 function Main () {
-    /* ====FORMA SENCILLA ==== Si funciono xD*/
-    /* Array de imagenes para el slide */
-    const images = [
-        imagen1,
-        imagen2,
-        imagen3,
-        imagen4,
-    ];
-    /*==== Logica del Slide ====*/
-    const [slideImage, setSlideImage] = React.useState(0);
+    const {
+        product,
+        setProduct,
+        openCart,
+        setOpenCart,
+        productAdded,
+        setProductAdded,
+    } = React.useContext(AppContext);
 
-    const nextImage = () => {
-        if(slideImage === (images.length - 1)){
-            setSlideImage(0);
-        }
-        else {
-            setSlideImage(slideImage + 1);
+    const moreProduct = () => {
+        setProduct(product + 1);
+    }
+    const minusProduct = () => {
+        if(product !== 0) {
+            setProduct(product - 1);
         }
     }
-    const prevImage = () => {
-        if(slideImage === 0){
-            setSlideImage(images.length - 1);
-        }
-        else {
-            setSlideImage(slideImage - 1);
-        }
-    }
+    const productPrice = 125.00;
+    const totalAmount = productPrice * product;
+    /* ==== Forma Larga === */
+    /* if(product === 0){
+        setOpenCart(false);
+    } else {
+        setOpenCart(true);
+    } */
 
-    //const price = 120;
-    console.log(slideImage);
+    
+    product === 0 ? setOpenCart(false) : setOpenCart(true);
+
+    /* Productos Added */
+    const cartProducts = () => {
+        setProductAdded(true);
+    }
+    const deleteProducts = () => {
+        setProductAdded(false);
+        setProduct(0);
+    }
     return (
         <main className="main-container">
-            {/* ===== Slide ===== */}
-            <div className="slider">
-                <div className="swiper swiper-main">
-                    <div className="swiper-wrapper">
-                        <div className="swiper-buttons__container">
-                            <div className="swiper-buttons">
-                                <div className="swiper-button-prev">
-                                    <img
-                                        onClick={prevImage} 
-                                        src={require("../images/icon-previous.svg").default} 
-                                        alt="next"
-                                    />
-                                </div>
-                                <div className="swiper-button-next">
-                                    <img 
-                                        onClick={nextImage}
-                                        src={require("../images/icon-next.svg").default} 
-                                        alt="next"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
-                            <img src={images[slideImage]} alt="imagenes"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* ===== Information ===== */}
+            <Cart 
+              openCart={openCart}
+              product={product}
+              productPrice={productPrice}
+              totalAmount={totalAmount}
+              productAdded={productAdded}
+              deleteProducts={deleteProducts}
+            />
+            <Slide />
+            {/* ====== ADD ====== */}
             <div className="info-container">
                 {/* ===== Description ===== */}
                 <div className="description-container">
@@ -105,17 +94,30 @@ function Main () {
                     <div className="add-container">
                         <div className="added-products">
                             <span className="button-minus">
-                                <img src={require("../images/icon-minus.svg").default} alt=""/>
+                                <img 
+                                    src={require("../images/icon-minus.svg").default} 
+                                    alt="icon minus"
+                                    onClick={minusProduct}
+                                />
                             </span>
                             <p className="products-counter">
-                                0
+                                {product}
                             </p>
                             <span className="button-plus">
-                                <img src={require("../images/icon-plus.svg").default} alt=""/>
+                                <img 
+                                    src={require("../images/icon-plus.svg").default} 
+                                    alt="icon plus"
+                                    onClick={moreProduct}
+                                />
                             </span>
                         </div>
                         <div className="add-cart-container">
-                            <button type="button" className="add-cart--button">
+                            <button 
+                                type="button" 
+                                className="add-cart--button"
+                                onClick={cartProducts}
+                                /* onClick={} */
+                            >
                                 <div className="add-cart">
                                     <span className="cart">
                                         <img src={require("../images/icon-cart.svg").default} alt=""/>

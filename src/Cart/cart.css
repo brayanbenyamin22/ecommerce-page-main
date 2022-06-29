@@ -1,0 +1,124 @@
+.cart-container {
+    position: absolute;
+    width: 95%;
+    height: 280px;
+    z-index: 0;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    background-color: var(--White);
+}
+.active {
+    z-index: 1;
+}
+.cart-header {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    padding-left: 30px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom: solid 1px var(--Grayish-blue);
+}
+.cart-header .cart-title{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--black);
+}
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+}
+.cart-content .cart-empty{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--Dark-grayish-blue);
+}
+.disable {
+    display: none;
+} 
+/* ===== Productos Agregados =====*/
+.cart-product {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blueviolet; */
+}
+.enable {
+    display: flex;
+}
+/* __Producto y Precio__ */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: auto;
+    margin-bottom: 15px;
+}
+/* Imagen */
+.product-img img {
+    width: 55px;
+    height: 55px;
+    border-radius: 0.5rem;
+}
+/* Descripcion */
+.product-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 100%;
+}
+.product-title {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+    color: var(--Dark-grayish-blue);
+}
+.product-price {
+    display: flex;
+    width: 100%;
+}
+.product-quation {
+    font-size: 1.4rem;
+    margin-right: 5px;
+    color: var(--Dark-grayish-blue);
+}
+.product-amount {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-right: 5px;
+    color: var(--Black);
+}
+.deleteBtn {
+    display:flex;
+    align-items: center;
+    width: auto;
+    padding-right: 5px;
+    height: 100%;
+}
+/* __Boton Check___ */
+.checkoutBtn {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--Orange);
+}
+.checkoutBtn p {
+    align-self:center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--White);
+}
