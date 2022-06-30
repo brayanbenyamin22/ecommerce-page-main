@@ -41,11 +41,39 @@
 .icon-cart {
     align-self: center;
 }
+.notification {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 13px;
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+    border-radius: 40%;
+    background-color: var(--Orange);
+}
+.notification p {
+    font-weight: bold;
+    text-align: center;
+    color: var(--White);
+}
+.enable {
+    z-index: 1;
+}
 .icon-avatar {
     align-self: center;
 }
 .icon-cart img {
     margin-right: 15px;
+    margin-bottom: 10px;
+}
+.newColor {
+    filter: brightness(0) saturate(100%) 
+    invert(0%) sepia(5%) saturate(7500%) 
+    hue-rotate(228deg) brightness(106%) 
+    contrast(106%);
 }
 .icon-avatar img {
     width: 28px;

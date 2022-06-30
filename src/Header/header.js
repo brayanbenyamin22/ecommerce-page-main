@@ -1,7 +1,7 @@
 import React from "react";
 import './header.css';
 import avatar from '../images/image-avatar.png';
-function Header () {
+function Header (props) {
     return (
         <header className="head-container">
             {/* === Container Left */}
@@ -15,8 +15,16 @@ function Header () {
             </div>
             {/* === Container Right */}
             <div className="head-container__right">
-                <span className="icon-cart">
-                    <img src={require("../images/icon-cart.svg").default} alt="Carrito de compras"/>
+                <span 
+                    onClick={props.cart}
+                    className="icon-cart">
+                    <span className={`notification ${props.productAdded && 'enable'}`}>
+                        <p>{props.product}</p>
+                    </span>
+                    <img
+                        className={`cart ${props.productAdded && 'newColor'}`}
+                        src={require("../images/icon-cart.svg").default} 
+                        alt="Carrito de compras"/>
                 </span>
                 <span className="icon-avatar">
                     <img src={avatar} alt="Perfil"/>

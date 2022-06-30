@@ -2,7 +2,7 @@
     position: absolute;
     width: 95%;
     height: 280px;
-    z-index: 0;
+    z-index: -1;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -10,7 +10,7 @@
     background-color: var(--White);
 }
 .active {
-    z-index: 1;
+    z-index: 0;
 }
 .cart-header {
     display: flex;
