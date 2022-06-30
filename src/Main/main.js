@@ -6,6 +6,7 @@ import { AppContext } from "../Context/context";
 
 
 function Main (props) {
+
     return (
         <main className="main-container">
             <Slide />
@@ -47,30 +48,33 @@ function Main (props) {
                     </div>
                     <div className="add-container">
                         <div className="added-products">
-                            <span className="button-minus">
+                            <button
+                                type="button" 
+                                className="button-minus">
                                 <img 
                                     src={require("../images/icon-minus.svg").default} 
                                     alt="icon minus"
                                     onClick={props.minusProduct}
                                 />
-                            </span>
+                            </button>
                             <p className="products-counter">
                                 {props.product}
                             </p>
-                            <span className="button-plus">
+                            <button
+                                type="button" 
+                                className="button-plus">
                                 <img 
                                     src={require("../images/icon-plus.svg").default} 
                                     alt="icon plus"
                                     onClick={props.moreProduct}
                                 />
-                            </span>
+                            </button>
                         </div>
                         <div className="add-cart-container">
                             <button 
                                 type="button" 
                                 className="add-cart--button"
                                 onClick={props.cartProducts}
-                                /* onClick={} */
                             >
                                 <div className="add-cart">
                                     <span className="cart">

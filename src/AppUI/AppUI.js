@@ -32,24 +32,30 @@ function AppUI () {
     } 
     /* Productos Added */
     const cartProducts = () => {
-        setProductAdded(true);
+        product === 0 ? setProductAdded(false) : setProductAdded(true);   
     }
     const deleteProducts = () => {
         setProductAdded(false);
         setProduct(0);
+    }
+
+    const notification = () => {
+        product !== 0 ? setProductAdded(true) : setProductAdded(false); 
     }
     return (
         <React.Fragment>
             <Header 
                 cart={cart}
                 product={product}
-                productAdded={productAdded} 
+                productAdded={productAdded} //Esta temporalmente, ya vere si lo remuevo
+                notification={notification}
             />
             <Main 
                 product={product}
                 minusProduct={minusProduct}
                 moreProduct={moreProduct}
                 cartProducts={cartProducts}
+                productAdded={productAdded}
             />
             <Cart 
               openCart={openCart} 
