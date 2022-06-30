@@ -11,6 +11,9 @@ function AppProvider (props) {
     
     /* ==== Logica del boton añadir productos ==== */
     const [productAdded, setProductAdded] = React.useState(false);
+
+    /* ==== Logica Menu ==== */
+    const [menu, setMenu] = React.useState(false);
     return(
         <AppContext.Provider value={{
             product,
@@ -19,6 +22,8 @@ function AppProvider (props) {
             setOpenCart,
             productAdded, 
             setProductAdded,
+            menu,
+            setMenu,
         }}>
             {props.children}
         </AppContext.Provider>

@@ -1,8 +1,10 @@
 .head-container {
+    position: relative;
     display: flex;
     width: 100%;
     min-width: 320px;
     height: 70px;
+    z-index: 1;
     background-color: var(--White);
 }
 .head-container__left {
@@ -50,8 +52,9 @@
     height: 13px;
     top: 8px;
     left: 8px;
-    z-index: -1;
+    z-index: 0;
     border-radius: 40%;
+    opacity: 0;
     background-color: var(--Orange);
 }
 .notification p {
@@ -59,15 +62,20 @@
     text-align: center;
     color: var(--White);
 }
-.enable {
-    z-index: 1;
+.notification-enable {
+    opacity: 100;
+    z-index: -2;
 }
 .icon-avatar {
+    position: relative;
     align-self: center;
+    z-index: -2;
 }
 .icon-cart img {
+    position: relative;
     margin-right: 15px;
     margin-bottom: 10px;
+    z-index: -3;
 }
 .newColor {
     filter: brightness(0) saturate(100%) 
