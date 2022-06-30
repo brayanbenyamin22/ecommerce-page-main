@@ -1,59 +1,13 @@
 import React from "react";
-import { Cart } from "../Cart/cart";
 import { Slide } from "../slide/slide";
 /* import { Add } from "../Add/add"; */
 import './main.css'
 import { AppContext } from "../Context/context";
 
 
-function Main () {
-    const {
-        product,
-        setProduct,
-        openCart,
-        setOpenCart,
-        productAdded,
-        setProductAdded,
-    } = React.useContext(AppContext);
-
-    const moreProduct = () => {
-        setProduct(product + 1);
-    }
-    const minusProduct = () => {
-        if(product !== 0) {
-            setProduct(product - 1);
-        }
-    }
-    const productPrice = 125.00;
-    const totalAmount = productPrice * product;
-    /* ==== Forma Larga === */
-    /* if(product === 0){
-        setOpenCart(false);
-    } else {
-        setOpenCart(true);
-    } */
-
-    
-    product === 0 ? setOpenCart(false) : setOpenCart(true);
-
-    /* Productos Added */
-    const cartProducts = () => {
-        setProductAdded(true);
-    }
-    const deleteProducts = () => {
-        setProductAdded(false);
-        setProduct(0);
-    }
+function Main (props) {
     return (
         <main className="main-container">
-            <Cart 
-              openCart={openCart}
-              product={product}
-              productPrice={productPrice}
-              totalAmount={totalAmount}
-              productAdded={productAdded}
-              deleteProducts={deleteProducts}
-            />
             <Slide />
             {/* ====== ADD ====== */}
             <div className="info-container">
@@ -97,17 +51,17 @@ function Main () {
                                 <img 
                                     src={require("../images/icon-minus.svg").default} 
                                     alt="icon minus"
-                                    onClick={minusProduct}
+                                    onClick={props.minusProduct}
                                 />
                             </span>
                             <p className="products-counter">
-                                {product}
+                                {props.product}
                             </p>
                             <span className="button-plus">
                                 <img 
                                     src={require("../images/icon-plus.svg").default} 
                                     alt="icon plus"
-                                    onClick={moreProduct}
+                                    onClick={props.moreProduct}
                                 />
                             </span>
                         </div>
@@ -115,7 +69,7 @@ function Main () {
                             <button 
                                 type="button" 
                                 className="add-cart--button"
-                                onClick={cartProducts}
+                                onClick={props.cartProducts}
                                 /* onClick={} */
                             >
                                 <div className="add-cart">
