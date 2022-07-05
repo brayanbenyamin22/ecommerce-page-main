@@ -54,10 +54,11 @@ const cartProducts = () => {
         setProCart(product);
     }
 }
-console.log(proCart);
+
 const deleteProducts = () => {
-    setProductAdded(false);
-    setProduct(0);
+        setProductAdded(false); //Cierra la muestra del producto
+        setProCart(0); //Reinicia el contador del Cart
+        setProduct(0); //Reinicia el contador del Adder
 }
 
 const notification = () => {
