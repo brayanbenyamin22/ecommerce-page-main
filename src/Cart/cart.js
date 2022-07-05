@@ -3,6 +3,7 @@ import './cart.css';
 import image from '../images/image-product-1-thumbnail.jpg';
 
 function Cart (props) {
+    console.log(props.proCart);
     return (
         <div className={`cart-container ${props.openCart && 'active'}`}>
             <div className="cart-header">
@@ -23,7 +24,7 @@ function Cart (props) {
                             <p className="product-title">Fall Limited Edition Snea...</p>
                             <span className="product-price">
                                 <p className="product-quation">
-                                    ${props.productPrice.toFixed(2)} x {props.product}
+                                    ${props.productPrice.toFixed(2)} x {props.proCart}
                                 </p>
                                 <p className="product-amount">
                                     {props.totalAmount.toFixed(2)}

@@ -2,7 +2,6 @@ import React from "react";
 import { Slide } from "../slide/slide";
 /* import { Add } from "../Add/add"; */
 import './main.css'
-import { AppContext } from "../Context/context";
 
 
 function Main (props) {
@@ -47,7 +46,10 @@ function Main (props) {
                             
                     </div>
                     <div className="add-container">
-                        <div className="added-products">
+                        <div 
+                            className="added-products"
+                            disabled={true}
+                        >
                             <button
                                 type="button" 
                                 className="button-minus">

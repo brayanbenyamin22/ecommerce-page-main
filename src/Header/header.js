@@ -1,14 +1,13 @@
 import React from "react";
 import { Sidemenu } from "../Sidemenu/sidemenu";
-import { AppContext } from "../Context/context";
 import './header.css';
 import avatar from '../images/image-avatar.png';
+import { useLogic } from "../AppUI/useLogic";
 function Header (props) {
     const {
         menu,
         setMenu,
-    } = React.useContext(AppContext);
-
+    } = useLogic();
     return (
         <header className="head-container">
             {/* === Container Left */}
@@ -32,7 +31,7 @@ function Header (props) {
                     onClick={props.cart}
                     className="icon-cart">
                     <span className={`notification ${props.productAdded && 'notification-enable'}`}>
-                        <p>{props.product}</p>
+                        <p>{props.proCart}</p>
                     </span>
                     <img
                         className={`cart ${props.productAdded && 'newColor'}`}
