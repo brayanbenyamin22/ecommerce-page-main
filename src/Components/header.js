@@ -1,8 +1,8 @@
 import React from "react";
-import { Sidemenu } from "../Sidemenu/sidemenu";
-import './header.css';
+import { Sidemenu } from "./sidemenu";
+import '../Styles/header.css';
 import avatar from '../images/image-avatar.png';
-import { useLogic } from "../AppUI/useLogic";
+import { useLogic } from "./useLogic";
 function Header (props) {
     const {
         menu,

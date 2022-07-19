@@ -1,7 +1,7 @@
 import React from "react";
-import { Slide } from "../slide/slide";
+import { Slide } from "./slide";
 /* import { Add } from "../Add/add"; */
-import './main.css'
+import '../Styles/main.css'
 
 
 function Main (props) {

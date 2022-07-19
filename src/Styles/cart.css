@@ -6,8 +6,22 @@
     width: 100%;
     height: 100px;
     top: 80px;
-    background-color: blue;
+    background-color: transparent;
 } 
+.bgCart {
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    background-color: transparent;
+}
+.bgCartOn {
+    position: fixed;
+    opacity: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1; 
+}
 .cart-container__product {
     width: 90%;
     min-width: 305px;
@@ -18,7 +32,7 @@
     background-color: var(--White);
 }
 .active {
-    z-index: 0;
+    z-index: 2;
     box-shadow: 7px 13px 24px 0px rgb(0,0,0,0.3);
 }
 .cart-header {

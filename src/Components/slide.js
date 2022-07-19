@@ -1,5 +1,5 @@
 import React from "react";
-import './slide.css';
+import '../Styles/slide.css';
 import imagen1 from '../images/image-product-1.jpg';
 import imagen2 from '../images/image-product-2.jpg';
 import imagen3 from '../images/image-product-3.jpg';

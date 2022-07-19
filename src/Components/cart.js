@@ -1,9 +1,10 @@
 import React from "react";
-import './cart.css';
+import '../Styles/cart.css';
 import image from '../images/image-product-1-thumbnail.jpg';
 
 function Cart (props) {
     return (
+        <React.Fragment>
         <div className="cart-container">
             <div className={`cart-container__product ${props.openCart && 'active'}`}>
                 <div className="cart-header">
@@ -40,18 +41,17 @@ function Cart (props) {
                         <button 
                             type="button"
                             className="checkoutBtn"
+                            onClick={props.cart}
                         >
                             <p>Checkout</p>
                         </button>
                     </div>
                 </div>
             </div>
-            <div 
-                className={`bgCart ${props.productAdded && 'bgCartOn'}`}
-                onClick={props.openCart}>
-                
-            </div> {/* Solo es para cerrar el cart */}
         </div>
+        <div className={`bgCart ${props.openCart && 'bgCartOn'}`} onClick={props.cart}>
+        </div> {/* Solo es para cerrar el cart */}
+        </React.Fragment>
     );
 }
 
