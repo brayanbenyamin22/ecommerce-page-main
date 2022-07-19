@@ -1,8 +1,8 @@
 import React from 'react';
 import { AppUI } from './AppUI';
-import { Header } from '../Header/header';
-import { Main } from '../Main/main';
-import { Cart } from '../Cart/cart';
+import { Header } from './header';
+import { Main } from './main';
+import { Cart } from './cart';
 import { useLogic } from  './useLogic';
 
 function App() {
@@ -54,10 +54,11 @@ const cartProducts = () => {
         setProCart(product);
     }
 }
-console.log(proCart);
+
 const deleteProducts = () => {
-    setProductAdded(false);
-    setProduct(0);
+        setProductAdded(false); //Cierra la muestra del producto
+        setProCart(0); //Reinicia el contador del Cart
+        setProduct(0); //Reinicia el contador del Adder
 }
 
 const notification = () => {
@@ -82,6 +83,7 @@ return (
                 cartProducts={cartProducts}
             />
             <Cart 
+                cart={cart}
                 openCart={openCart} 
                 productPrice={productPrice}
                 totalAmount={totalAmount}

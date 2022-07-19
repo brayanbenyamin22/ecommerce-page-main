@@ -1,5 +1,5 @@
 import React from "react";
-import './sidemenu.css';
+import '../Styles/sidemenu.css';
 
 function Sidemenu(props) {
 

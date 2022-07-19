@@ -157,6 +157,7 @@
     align-self: center;
     outline: none;
     border: none;
+    background-color: transparent;
 }
 .products-counter {
     align-self: center;
@@ -167,6 +168,7 @@
     align-self: center;
     outline: none;
     border: none;
+    background-color: transparent;
 }
 .add-cart-container {
     width: 100%;
