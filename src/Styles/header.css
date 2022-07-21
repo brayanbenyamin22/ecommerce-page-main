@@ -45,6 +45,7 @@
 }
 /* ==== Seccion Derecha ==== */
 .icon-cart {
+    cursor: pointer;
     align-self: center;
 }
 .notification {
@@ -118,4 +119,35 @@
     .logo {
         margin-left: 0;
     } 
+}
+
+/* ==== Desktop ==== */
+@media (min-width: 1200px) {
+    .head-container {
+        height: 100px;
+    }
+    .head-container__items {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        border-bottom: solid 1px var(--Grayish-blue);
+    }
+    .head-container__right {
+        width: 10%;
+        justify-content: space-between;
+    }
+    .icon-avatar {
+        z-index: 0;
+    }
+    .icon-avatar img {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        margin-right: 0;
+    }
+    .icon-avatar img:hover {
+        border: solid 2px var(--Orange);
+        border-radius: 50%;
+        transition: all .1s ease;
+    }
 }

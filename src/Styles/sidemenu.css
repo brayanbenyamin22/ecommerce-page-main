@@ -50,6 +50,7 @@
     outline: none;
 }
 .sidemenu li a {
+    cursor: pointer;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -65,9 +66,7 @@
         height: 100%;
     }
     .sidemenu {
-        /* order: 2; */
         position: relative;
-        /* justify-content: center; */
         flex-direction: row;
         padding: 0;
         padding-top: 0;
@@ -90,7 +89,6 @@
         margin-right: 15px;
         margin-bottom: 0;
         outline: none;
-        /* background-color: blueviolet; */
     }
     .sidemenu li a {
         display: flex;
@@ -107,4 +105,12 @@
     .sidemenu li a:hover {
         color: var(--Black);
     } 
+}
+
+/* ==== Desktop ==== */
+@media (min-width: 1200px) {
+    .sidemenu {
+        margin-left: 40px;
+    }
+    
 }
