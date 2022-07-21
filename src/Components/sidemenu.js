@@ -5,7 +5,7 @@ function Sidemenu(props) {
 
     return(
             <nav>
-              <ul className={`sidemenu ${props.openMenu && 'active'}`}>
+              <ul className={`sidemenu ${props.openMenu && 'activeMenu'}`} onClick={props.ocMenu}>
                 <li>
                     <a href="#home">Collections</a>
                 </li>
@@ -22,7 +22,11 @@ function Sidemenu(props) {
                     <a href="#home">Contact</a>
                 </li>
               </ul>
-              <div className={`bg ${props.openMenu && 'on'}`}></div>          
+              <div 
+                    className={`bg ${props.openMenu && 'on'}`} 
+                    onClick={props.ocMenu}
+              >
+              </div>          
             </nav> 
     );
 }

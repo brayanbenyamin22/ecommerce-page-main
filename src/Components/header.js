@@ -10,37 +10,40 @@ function Header (props) {
     } = useLogic();
     return (
         <header className="head-container">
-            {/* === Container Left */}
-            <div className="head-container__left">
-                <span 
-                    onClick={() => setMenu(!menu)}
-                    className="icon-menu"
-                > {/* === Aqui ira el componente sidebar y navbar*/}
-                    <img src={require("../images/icon-menu.svg").default} alt="Menu del icono"/>
+            <div className="head-container__items">
+                {/* === Container Left */}
+                <div className="head-container__left">
+                    <span 
+                        onClick={() => setMenu(!menu)}
+                        className="icon-menu"
+                    > {/* === Aqui ira el componente sidebar y navbar*/}
+                        <img src={require("../images/icon-menu.svg").default} alt="Menu del icono"/>
+                    </span>
+                    <div className="logo">
+                        <img src={require("../images/logo.svg").default} alt="Logo"/>
+                    </div>
                     <Sidemenu 
                         openMenu={menu}
+                        ocMenu={() => setMenu(!menu)}
                     />
-                </span>
-                <div className="logo">
-                    <img src={require("../images/logo.svg").default} alt="Logo"/>
                 </div>
-            </div>
-            {/* === Container Right */}
-            <div className="head-container__right">
-                <span 
-                    onClick={props.cart}
-                    className="icon-cart">
-                    <span className={`notification ${props.productAdded && 'notification-enable'}`}>
-                        <p>{props.proCart}</p>
+                {/* === Container Right */}
+                <div className="head-container__right">
+                    <span 
+                        onClick={props.cart}
+                        className="icon-cart">
+                        <span className={`notification ${props.productAdded && 'notification-enable'}`}>
+                            <p>{props.proCart}</p>
+                        </span>
+                        <img
+                            className={`cart ${props.productAdded && 'newColor'}`}
+                            src={require("../images/icon-cart.svg").default} 
+                            alt="Carrito de compras"/>
                     </span>
-                    <img
-                        className={`cart ${props.productAdded && 'newColor'}`}
-                        src={require("../images/icon-cart.svg").default} 
-                        alt="Carrito de compras"/>
-                </span>
-                <span className="icon-avatar">
-                    <img src={avatar} alt="Perfil"/>
-                </span>
+                    <span className="icon-avatar">
+                        <img src={avatar} alt="Perfil"/>
+                    </span>
+                </div>
             </div>
         </header>
     );
