@@ -7,6 +7,10 @@
     z-index: 1;
     background-color: var(--White);
 }
+.head-container__items {
+    display: inherit;
+    width: 100%;
+}
 .head-container__left {
     display: flex;
     width: 70%;
@@ -87,4 +91,31 @@
     width: 28px;
     height: 28px;
     margin-right: 20px;
+}
+/* ==== Tablets o iPad =====*/
+@media (min-width: 700px) {
+    .icon-menu {
+        display: none;
+    }
+    .head-container {
+        display: flex;
+        justify-content: center;
+    }
+    .head-container__items {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+    }
+    .head-container__left {
+        width: 90%;
+        align-items: center;
+        /* background-color:  blue; */
+    }
+    .head-container__right {
+        width: 10%;
+        /* background-color:  blue; */
+    }
+    .logo {
+        margin-left: 0;
+    } 
 }

@@ -26,7 +26,8 @@
     overflow-y: none;
     background: var(--White);
 } 
-.active{
+.activeMenu{
+    z-index: 2;
     transform: translateX(0);
 }
 .bg {
@@ -56,4 +57,54 @@
     font-weight: bold;
     text-decoration: none;
     color: var(--Black);
+}
+
+/* =============== Tablets && iPad ===============*/
+@media (min-width: 700px) {
+    nav {
+        height: 100%;
+    }
+    .sidemenu {
+        /* order: 2; */
+        position: relative;
+        /* justify-content: center; */
+        flex-direction: row;
+        padding: 0;
+        padding-top: 0;
+        height: 100%;
+        transform: translateX(0);
+        margin-left: 20px;
+        background: none;
+    }
+    .bg {
+        display: none;
+    }
+    .on {
+        display: none;
+    }
+    .sidemenu li {
+        display:flex;
+        align-items: center;
+        width: 60%;
+        height: 100%;
+        margin-right: 15px;
+        margin-bottom: 0;
+        outline: none;
+        /* background-color: blueviolet; */
+    }
+    .sidemenu li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-decoration: none;
+        color: var(--Dark-grayish-blue);
+    }
+    .sidemenu li:hover {
+        border-bottom: solid  5px var(--Orange);
+    }
+    .sidemenu li a:hover {
+        color: var(--Black);
+    } 
 }
