@@ -146,17 +146,18 @@
     color: var(--White);
 }
 
-/* ===== Tablets y Desktop ==== */
-@media (min-width: 900px) {
+/* ===== Tablets y iPads ==== */
+@media (min-width: 700px) {
     .cart-container {
         justify-content: flex-end;
         align-items: flex-start;
-        top: 50px;
+        top: 60px;
         padding-right: 5%;
     }
-    .cart-container__product {
-        /* top: 200px;
-        left: 0;
-        transform: translate(-50%, -50%); */
+}
+/* ===== Desktop ==== */
+@media (min-width: 1200px) {
+    .cart-container {
+        top: 80px;
     }
 }
