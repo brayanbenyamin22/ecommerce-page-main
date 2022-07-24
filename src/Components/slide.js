@@ -4,6 +4,10 @@ import imagen1 from '../images/image-product-1.jpg';
 import imagen2 from '../images/image-product-2.jpg';
 import imagen3 from '../images/image-product-3.jpg';
 import imagen4 from '../images/image-product-4.jpg'; 
+import thumb1 from '../images/image-product-1-thumbnail.jpg';
+import thumb2 from '../images/image-product-2-thumbnail.jpg';
+import thumb3 from '../images/image-product-3-thumbnail.jpg';
+import thumb4 from '../images/image-product-4-thumbnail.jpg';
 function Slide () {
     /* ====FORMA SENCILLA ==== Si funciono xD*/
     /* Array de imagenes para el slide */
@@ -12,6 +16,12 @@ function Slide () {
         imagen2,
         imagen3,
         imagen4,
+    ];
+    const thumbs = [
+        thumb1,
+        thumb2,
+        thumb3,
+        thumb4,
     ];
     /*==== Logica del Slide ====*/
     const [slideImage, setSlideImage] = React.useState(0);
@@ -61,6 +71,20 @@ function Slide () {
                         <div className="swiper-slide">
                             <img src={images[slideImage]} alt="imagenes"/>
                         </div>
+                    </div>
+                    <div className="swiper-thumbs">
+                            <div className="swiper-thumbs__items">
+                                <img src={thumbs[0]} alt="imagenes"/>
+                            </div>
+                            <div className="swiper-thumbs__items">
+                                <img src={thumbs[1]} alt="imagenes"/>
+                            </div>
+                            <div className="swiper-thumbs__items">
+                                <img src={thumbs[2]} alt="imagenes"/>
+                            </div>
+                            <div className="swiper-thumbs__items">
+                                <img src={thumbs[3]} alt="imagenes"/>
+                            </div>
                     </div>
                 </div>
             </div>
