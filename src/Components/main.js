@@ -9,7 +9,10 @@ function Main (props) {
     return (
         <main className="main-container">
             <div className="main-container__items">
-                <Slide />
+                <Slide 
+                    openModal={props.openModal}
+                    slideModal={props.slideModal}
+                />
                 {/* ====== ADD ====== */}
                 <div className="info-container">
                     <div className="info-container__items">

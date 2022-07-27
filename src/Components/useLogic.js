@@ -15,7 +15,10 @@ function useLogic() {
     
     /* ==== Logica Menu ==== */
     const [menu, setMenu] = useState(false);
-    
+
+    /* ==== Logica del Slide ==== */
+    const [slideModal, setSlideModal] = useState(false);
+    const [slideImage, setSlideImage] = React.useState(0);
     return(
       {  
         product,
@@ -28,6 +31,10 @@ function useLogic() {
         setProductAdded,
         menu,
         setMenu,
+        slideModal,
+        setSlideModal,
+        slideImage, 
+        setSlideImage,
     });
 }
 

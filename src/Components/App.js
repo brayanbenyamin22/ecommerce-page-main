@@ -3,6 +3,7 @@ import { AppUI } from './AppUI';
 import { Header } from './header';
 import { Main } from './main';
 import { Cart } from './cart';
+import { SlideModal } from './slideModal';
 import { useLogic } from  './useLogic';
 
 function App() {
@@ -15,16 +16,10 @@ function App() {
     setOpenCart,
     productAdded,
     setProductAdded,
+    slideModal,
+    setSlideModal,
 } = useLogic();
-/* ==== OPCION A ==== */
-/* const moreProduct = () => {
-    setProduct(product + 1);
-}
-const minusProduct = () => {
-    if(product !== 0) {
-        setProduct(product - 1);
-    }
-} */
+
 /* ==== OPCION B ==== */
 const moreProduct = () => {
     if(productAdded !== true ){
@@ -64,7 +59,13 @@ const deleteProducts = () => {
 const notification = () => {
     product !== 0 ? setProductAdded(true) : setProductAdded(false); 
 }
-
+/*  Abrir Slide Modal */
+const openModal = () => {
+    setSlideModal(true);
+}
+const closeModal = () => {
+    setSlideModal(false);
+}
 return (
     <React.Fragment>
        <AppUI
@@ -81,6 +82,8 @@ return (
                 minusProduct={minusProduct}
                 moreProduct={moreProduct}
                 cartProducts={cartProducts}
+                openModal={openModal}
+                slideModal={slideModal}
             />
             <Cart 
                 cart={cart}
@@ -89,6 +92,10 @@ return (
                 totalAmount={totalAmount}
                 deleteProducts={deleteProducts}
                 proCart={proCart}
+            />
+            <SlideModal 
+                slideModal={slideModal}
+                closeModal={closeModal}
             />
        </AppUI>
     </React.Fragment>
