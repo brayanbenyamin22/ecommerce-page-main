@@ -1,10 +1,33 @@
+ @-webkit-keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+  }
+
 .slideModal{
     display: none;
 }
 @media (min-width: 1200px){
     .slideModal{
-        /* display: none;
-        flex-direction: column; */
         justify-content: center;
         position: fixed;
         width: 100%;
@@ -25,6 +48,8 @@
         /* background: blue; */
         align-items: flex-end;
         justify-content: center;
+        -webkit-animation: scale-in-center 0.3s ease-out both;
+        animation: scale-in-center 0.3s ease-out both;
     }
     .bgSlideModal {
         position: fixed;

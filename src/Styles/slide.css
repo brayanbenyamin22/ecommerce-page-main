@@ -67,7 +67,6 @@
         border-radius: 20px;
     }    
 }
-/* ____ Slide Modal ____ */
 /* ========================= Desktop ============================ */
 @media (min-width: 1200px) {
     .slide-container {
@@ -85,6 +84,9 @@
     }
     .swiper-wrapper {
         margin-bottom: 30px;
+    }
+    .swiper-slide img{
+        cursor: pointer;
     }
     .swiper-buttons__container {
         display: none;
@@ -106,9 +108,20 @@
          cursor: pointer;
          width: 100%;
          display: block;
+         user-select: none;
          border-radius: 10px;
      }
      .swiper-thumbs__items > img:hover {
+        opacity: 50%;
+    }
+    .thumb1On, .thumb2On, .thumb3On, .thumb4On {
+        border-radius: 12px;
+        border: solid var(--Orange);
+    }
+    .thumb1On > img, 
+    .thumb2On > img,
+    .thumb3On > img,
+    .thumb4On > img {
         opacity: 50%;
     }
 }

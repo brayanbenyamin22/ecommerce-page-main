@@ -7,7 +7,7 @@ function SlideModal (props) {
 
     /* console.log(`SlideModal: ${props.slideModal}`); */
     return(
-        <div className={`slideModal ${props.slideModal && 'modalActive'}`}>
+        <div className={`slideModal ${props.slideModal && 'modalActive '}`}>
             <div className="slideModal-items">
                 <div className="slide-button-close">
                     <img

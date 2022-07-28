@@ -18,7 +18,11 @@ function useLogic() {
 
     /* ==== Logica del Slide ==== */
     const [slideModal, setSlideModal] = useState(false);
-    const [slideImage, setSlideImage] = React.useState(0);
+    const [slideImage, setSlideImage] = useState(0);
+    const [thumb1Selected, setThumb1Selected] = useState(true);
+    const [thumb2Selected, setThumb2Selected] = useState(false);
+    const [thumb3Selected, setThumb3Selected] = useState(false);
+    const [thumb4Selected, setThumb4Selected] = useState(false);
     return(
       {  
         product,
@@ -35,6 +39,14 @@ function useLogic() {
         setSlideModal,
         slideImage, 
         setSlideImage,
+        thumb1Selected, 
+        setThumb1Selected,
+        thumb2Selected, 
+        setThumb2Selected,
+        thumb3Selected, 
+        setThumb3Selected,
+        thumb4Selected, 
+        setThumb4Selected,
     });
 }
 
